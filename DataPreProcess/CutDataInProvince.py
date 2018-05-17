@@ -2,8 +2,10 @@
 
 
 import os
-from DataPreProcess.Function import *
 from itertools import islice
+
+from DataPreProcess.Function import *
+
 # from PassRecord import *
 
 

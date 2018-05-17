@@ -1,5 +1,13 @@
 # encoding=utf-8
 
+"""
+本程序主要目的是对流量数据通过ARMA模型进行拟合和预测。具体的思路是，首先对数据进行DataFrame的处理（需要插入日期格式）；
+其次是对DataFrame进行处理，比如，趋势分解，标准化，然后对残差部分进行ARMA模型训练；
+ARMA模型训练的参数选取标准主要是aic、bic、hqic三种，选择数值最小aic对应的模型阶数p、q;
+训练数据通过MLE等训练方法，得出相应的ARMA模型，以及对应的p阶和q阶权值；
+然后通过调用 predict和forecast方法，对模型进行预测，预测结果很快收敛，说明我们的模型只能做短期预测。
+"""
+
 from datetime import datetime
 
 import matplotlib.pylab as plt
@@ -41,8 +49,6 @@ for key, value in items:
     date.append('2016' + key + '0000')
     count.append(int(value))  # 因为从文件中直接读取，value会被默认为string，需要强制转换成int
     frame.ix[key[0:4], key[4:6]] = value
-
-#print(count)
 
 obj = Series(count, index=date)
 objTest = obj.ix['2016040400':'2016041823']

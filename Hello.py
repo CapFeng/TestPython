@@ -1,5 +1,4 @@
 # encoding=utf-8
-from dateutil.parser import parse
 from datetime import datetime
 
 '''

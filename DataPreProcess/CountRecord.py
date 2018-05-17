@@ -1,7 +1,8 @@
 # encoding=utf-8
 
-import os
 import codecs
+import os
+
 from DataPreProcess.PassRecord import *
 
 rootDirName = "C:\\Users\\wbl\\Desktop\\ETC\\Process"

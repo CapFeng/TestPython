@@ -31,12 +31,12 @@ class Function:
             # print stationName + " is not in This Province!"
             return False
     @staticmethod
-    def insertRecords(time, countDict):
-        if time not in countDict.keys():
-            countDict.setdefault(time, 1)
+    def insertRecords(key, countDict, num):
+        if key not in countDict.keys():
+            countDict.setdefault(key, num)
         else:
-            count = countDict.get(time) + 1
-            countDict[time] = count
+            count = countDict.get(key) + num
+            countDict[key] = count
 
 
     @staticmethod
